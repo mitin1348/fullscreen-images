@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Выбор картинки</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #020617, #0b1740);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  button {
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #2563eb;
+  }
+
+  img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+  <h1>Выбери картинку</h1>
+  <button onclick="showImage('img1.jpg')">Картинка 1</button>
+  <button onclick="showImage('img2.jpg')">Картинка 2</button>
+
+  <img id="fullscreenImg" src="" alt="">
+
+  <script>
+    function showImage(imgName) {
+      const img = document.getElementById("fullscreenImg");
+      img.src = imgName;
+      img.style.display = "block";
+      img.requestFullscreen();
+    }
+  </script>
+</body>
+</html>
